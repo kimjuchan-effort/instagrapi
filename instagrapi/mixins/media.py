@@ -510,7 +510,7 @@ class MediaMixin:
             "first": 50 if not amount or amount > 50 else amount,  # These are Instagram restrictions, you can only specify <= 50
         }
         while True:
-            self.logger.info(f"user_medias_gql: {amount}, {end_cursor}")
+#             self.logger.info(f"user_medias_gql: {amount}, {end_cursor}")
             if end_cursor:
                 variables["after"] = end_cursor
             medias_page, end_cursor = self.user_medias_paginated_gql(
