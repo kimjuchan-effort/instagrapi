@@ -117,13 +117,13 @@ class PublicRequestMixin:
                 "public_request %s: %s", response.status_code, response.url
             )
 
-#             self.request_logger.info(
-#                 "[%s] [%s] %s %s",
-#                 self.public.proxies.get("https"),
-#                 response.status_code,
-#                 "POST" if data else "GET",
-#                 response.url,
-#             )
+            self.request_logger.info(
+                "[%s] [%s] %s %s",
+                self.public.proxies.get("https"),
+                response.status_code,
+                "POST" if data else "GET",
+                response.url,
+            )
             self.last_public_response = response
             response.raise_for_status()
             if return_json:
