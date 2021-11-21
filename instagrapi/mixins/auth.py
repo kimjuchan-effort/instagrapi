@@ -370,12 +370,12 @@ class LoginMixin(PreLoginFlowMixin, PostLoginFlowMixin):
         #        return True  # already login
         if self.user_id and not relogin:
             return True  # already login
-        try:
-            self.pre_login_flow()
-        except (PleaseWaitFewMinutes, ClientThrottledError):
-            self.logger.warning('Ignore 429: Continue login')
-            # The instagram application ignores this error
-            # and continues to log in (repeat this behavior)
+#         try:
+#             self.pre_login_flow()
+#         except (PleaseWaitFewMinutes, ClientThrottledError):
+#             self.logger.warning('Ignore 429: Continue login')
+#             # The instagram application ignores this error
+#             # and continues to log in (repeat this behavior)
         enc_password = self.password_encrypt(password)
         data = {
             "jazoest": generate_jazoest(self.phone_id),
