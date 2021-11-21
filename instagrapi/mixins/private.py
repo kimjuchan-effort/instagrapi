@@ -391,19 +391,19 @@ class PrivateRequestMixin:
         return last_json
 
     def request_log(self, response):
-#         pass
-        self.request_logger.info(
-            "%s [%s] %s %s (%s)",
-            self.username,
-            response.status_code,
-            response.request.method,
-            response.url,
-            "{app_version}, {manufacturer} {model}".format(
-                app_version=self.device_settings.get("app_version"),
-                manufacturer=self.device_settings.get("manufacturer"),
-                model=self.device_settings.get("model"),
-            ),
-        )
+        pass
+#         self.request_logger.info(
+#             "%s [%s] %s %s (%s)",
+#             self.username,
+#             response.status_code,
+#             response.request.method,
+#             response.url,
+#             "{app_version}, {manufacturer} {model}".format(
+#                 app_version=self.device_settings.get("app_version"),
+#                 manufacturer=self.device_settings.get("manufacturer"),
+#                 model=self.device_settings.get("model"),
+#             ),
+#         )
 
     def private_request(
         self,
