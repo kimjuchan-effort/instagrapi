@@ -24,6 +24,7 @@ from instagrapi.exceptions import (
     TwoFactorRequired,
 )
 from instagrapi.utils import dumps, gen_token, generate_jazoest
+from instagrapi.devices import DEVICES
 
 # from instagrapi.zones import CET
 
@@ -594,15 +595,17 @@ class LoginMixin(PreLoginFlowMixin, PostLoginFlowMixin):
         bool
             A boolean value
         """
+        device_selected = random.choice(DEVICES)
+        
         self.device_settings = device or {
             "app_version": "203.0.0.29.118",
             "android_version": 26,
             "android_release": "8.0.0",
             "dpi": "480dpi",
             "resolution": "1080x1920",
-            "manufacturer": "Xiaomi",
-            "device": "MI 5s",
-            "model": "capricorn",
+            "manufacturer": device_selected[0],
+            "device": device_selected[1],
+            "model": device_selected[2],
             "cpu": "qcom",
             "version_code": "314665256",
         }
