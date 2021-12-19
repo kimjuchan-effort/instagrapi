@@ -414,7 +414,7 @@ class LoginMixin(PreLoginFlowMixin, PostLoginFlowMixin):
             }
             logged = self.private_request("accounts/two_factor_login/", data, login=True)
         if logged:
-            self.login_flow()
+#             self.login_flow()
             self.last_login = time.time()
             return True
         return False
