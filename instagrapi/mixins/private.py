@@ -442,6 +442,7 @@ class PrivateRequestMixin:
                 self.handle_exception(self, e)
             elif isinstance(e, ChallengeRequired):
                 time.sleep(10)
+                raise e
             else:
                 raise e
             if login and self.user_id:
