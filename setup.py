@@ -29,7 +29,7 @@ requirements = [
 # ]
 
 setup(
-    name='instagrapi',
+    name='instagrapi-juchan',
     version='1.15.15',
     author='Mikhail Andreev',
     author_email='x11org@gmail.com',
